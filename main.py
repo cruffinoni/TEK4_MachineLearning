@@ -79,7 +79,7 @@ def main():
             drawing_mode="freedraw",
             key="canvas",
         )
-        st.button('Predict')
+        # st.button('Predict')
 
     if canvas_result.image_data is not None:
         st.success(f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box.")
