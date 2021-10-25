@@ -16,9 +16,7 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 
 def runPrediction(model, image):
-    print(image)
-    # model.predict()
-    return "test"
+    return model.predict(image)
 
 
 def file_selector(folder_path='.'):
