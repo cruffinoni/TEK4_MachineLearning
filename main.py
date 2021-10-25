@@ -24,7 +24,7 @@ def runPrediction(model, image):
     im.save("currentImage", "png")
 
     # load the image
-    img = load_img("currentImage.png", grayscale=True, target_size=(28, 28))
+    img = load_img("./currentImage.png", grayscale=True, target_size=(28, 28))
     # convert to array
     img = img_to_array(img)
     # reshape into a single sample with 1 channel
