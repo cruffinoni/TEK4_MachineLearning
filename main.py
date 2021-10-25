@@ -35,8 +35,7 @@ def runPrediction(model, image):
     img = img / 255.0
     predict_x = model.predict(img)
     classes_x = np.argmax(predict_x, axis=1)
-    print(classes_x)
-    return classes_x
+    return classes_x[0]
 
 
 def file_selector(folder_path='.'):
