@@ -21,18 +21,15 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 def runPrediction(model, image):
     im = Image.fromarray((image * 255).astype(np.uint8))
-    im.save("currentImage", "png")
+    # im.save("currentImage", "png")
 
-    # load the image
-    img = load_img("./currentImage.png", grayscale=True, target_size=(28, 28))
-    # convert to array
-    img = img_to_array(img)
-    # reshape into a single sample with 1 channel
-    img = img.reshape(1, 28, 28, 1)
-    # prepare pixel data
-    img = img.astype('float32')
-    img = img / 255.0
-    return img
+    # img = img_to_array(img)
+    # # reshape into a single sample with 1 channel
+    # img = img.reshape(1, 28, 28, 1)
+    # # prepare pixel data
+    # img = img.astype('float32')
+    # img = img / 255.0
+    return im
 
 
 def file_selector(folder_path='.'):
