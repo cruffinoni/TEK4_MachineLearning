@@ -59,10 +59,9 @@ def main():
 
     with col2:
         with st.beta_expander("🤖  Artificial intelligence", expanded=True):
-            st.markdown("<div style=\"text-align: center\">", True)
             st.markdown("""
             #### How does it work ❓ 
-                You can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
+            \t\tYou can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
             """)
 
         canvas_result = st_canvas(
@@ -76,12 +75,11 @@ def main():
             drawing_mode="freedraw",
             key="canvas",
         )
-        st.markdown("</div>", True)
         if st.button('Predict') and canvas_result.image_data is not None:
-            col1.write('''
+            st.write('''
             ## Results 🔍 
             ''')
-            col1.success(
+            st.success(
                 f" Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
     # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
 
