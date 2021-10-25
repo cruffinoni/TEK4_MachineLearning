@@ -21,6 +21,7 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 def runPrediction(model, image):
     im = Image.fromarray((image * 255).astype(np.uint8))
+    img = img_to_array(im)
     # im.save("currentImage", "png")
 
     # img = img_to_array(img)
@@ -29,7 +30,7 @@ def runPrediction(model, image):
     # # prepare pixel data
     # img = img.astype('float32')
     # img = img / 255.0
-    return im
+    return img
 
 
 def file_selector(folder_path='.'):
