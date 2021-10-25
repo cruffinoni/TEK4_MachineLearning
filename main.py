@@ -64,7 +64,11 @@ def main():
             You can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
             """)
         st.markdown("#### 🚧 Try it by yourself!")
-        st.write("\n\n")
+        st.markdown("""
+        <br/>
+        <br/>
+        """, unsafe_allow_html=True)
+
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
             stroke_width=1,
