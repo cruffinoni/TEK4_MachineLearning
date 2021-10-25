@@ -66,7 +66,6 @@ def main():
         st.markdown("#### 🚧 Try it by yourself!")
         st.markdown("""
         <br/>
-        <br/>
         """, unsafe_allow_html=True)
 
         canvas_result = st_canvas(
@@ -84,10 +83,12 @@ def main():
             st.write('''
             ## Results 🔍 
             ''')
-        st.write("\n\n")
-        st.success(
-            f" Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
+        st.markdown("""
+        <br/>
+        """, unsafe_allow_html=True)
 
+    st.success(
+        f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
     st.warning(
         "Note: This A.I application is for educational/demo purposes only and cannot be relied upon.")
 
