@@ -16,7 +16,7 @@ from keras.preprocessing.image import img_to_array, load_img, array_to_img
 from streamlit_drawable_canvas import st_canvas
 
 st.set_page_config(page_title="Handwritten number recognition", page_icon="✍",
-                        layout='centered', initial_sidebar_state="collapsed")
+                   layout='centered', initial_sidebar_state="collapsed")
 
 
 def rgb2gray(rgb):
@@ -37,6 +37,13 @@ def runPrediction(model, image):
     predict_x = model.predict(img)
     classes_x = np.argmax(predict_x, axis=1)
     return classes_x[0]
+
+
+def onclickpredic(col, model, canva):
+    with col:
+        if canva.image_data is not None:
+            st.success(
+                f"🔎 Our AI detect that your draw a {runPrediction(model, canva.image_data)} in the black box.")
 
 
 def main():
@@ -69,7 +76,8 @@ def main():
         """, unsafe_allow_html=True)
 
         canvas_result = st_canvas(
-            fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
+            fill_color="rgba(255, 165, 0, 0.3)",
+            # Fixed fill color with some opacity
             stroke_width=1,
             stroke_color="#FFFFFF",
             background_color="#000000",
@@ -79,10 +87,12 @@ def main():
             drawing_mode="freedraw",
             key="canvas",
         )
-        st.button('Predict')
+        st.button('Predict', on_click=onclickpredic,
+                  args=[col2, model, canvas_result])
 
     if canvas_result.image_data is not None:
-        st.success(f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box.")
+        st.success(
+            f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box.")
     st.warning(
         "Note: This A.I application is for educational/demo purposes only and cannot be relied upon.")
 
