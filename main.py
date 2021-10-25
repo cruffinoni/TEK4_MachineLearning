@@ -5,11 +5,6 @@ import os
 import pickle
 import warnings
 
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.layers import Conv2D, MaxPooling2D
-from tensorflow.keras.optimizers import SGD
-
-
 import keras
 from keras import models
 from keras.preprocessing.image import img_to_array, load_img
