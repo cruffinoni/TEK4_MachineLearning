@@ -10,3 +10,4 @@ poetry
 pipenv
 streamlit-drawable-canvas
 tensorflow
+keras
