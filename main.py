@@ -44,7 +44,7 @@ def main():
     # title
     st.markdown("""
     <div>
-    <h1 style="color:MEDIUMSEAGREEN;text-align:left;"> Handwritten number 🔢 </h1>
+    <h1 style="color:MEDIUMSEAGREEN;text-align:center;"> Handwritten number recognition 💯</h1>
     </div>
     """, unsafe_allow_html=True)
 
