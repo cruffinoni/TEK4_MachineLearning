@@ -81,8 +81,8 @@ def main():
             stroke_color="#FFFFFF",
             background_color="#000000",
             update_streamlit=True,
-            height=150,
-            width=150,
+            height=56,
+            width=56,
             drawing_mode="freedraw",
             key="canvas",
         )
