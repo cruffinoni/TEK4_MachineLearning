@@ -8,9 +8,8 @@ import warnings
 import keras
 from keras import models
 from keras.models import Sequential, load_model
+from streamlit_drawable_canvas import st_canvas
 
-from matplotlib import pyplot
-from sklearn.model_selection import KFold
 
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
