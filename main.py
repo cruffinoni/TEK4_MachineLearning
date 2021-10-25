@@ -48,7 +48,7 @@ def main():
                             "FileSize": uploaded_file.size}
             st.write(file_details)
 
-        if st.button('Predict'):
+        if st.button('Predicts_'):
             col1.write('''
             ## Results 🔍 
             ''')
