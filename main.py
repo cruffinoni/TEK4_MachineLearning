@@ -5,9 +5,23 @@ import os
 import pickle
 import warnings
 
-from tensorflow import keras
-from tensorflow.keras.models import Sequential, load_model
-from streamlit_drawable_canvas import st_canvas
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
+from tensorflow.keras.optimizers import SGD
+
+
+import keras
+from keras import models
+from keras.preprocessing.image import img_to_array, load_img
+from keras.datasets import mnist
+from keras.models import Sequential, load_model
+from keras.layers import Dense, Activation, Flatten, Dropout
+from statistics import mean
+
+import numpy as np
+
+from matplotlib import pyplot
+from sklearn.model_selection import KFold
 
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
