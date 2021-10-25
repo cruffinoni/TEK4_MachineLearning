@@ -15,7 +15,7 @@ from keras.preprocessing.image import img_to_array, load_img, array_to_img
 
 from streamlit_drawable_canvas import st_canvas
 
-st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
+st.set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
 
 
