@@ -13,8 +13,6 @@ from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation, Flatten, Dropout
 from statistics import mean
 
-import numpy as np
-
 from matplotlib import pyplot
 from sklearn.model_selection import KFold
 
