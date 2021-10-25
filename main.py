@@ -9,9 +9,9 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential, load_model
 from streamlit_drawable_canvas import st_canvas
 
-
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
+
 
 def runPrediction(model):
     # model.predict()
@@ -22,6 +22,7 @@ def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select a file', filenames)
     return os.path.join(folder_path, selected_filename)
+
 
 def main():
     model = load_model("./final_model.h5")
