@@ -18,10 +18,7 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 def runPrediction(model, image):
     img = image
-    grey = rgb2gray(img)
-    grey = zoom(grey, 0.125)
-    output = model(grey)
-    return grey
+    return img
 
 
 def rgb2gray(rgb):
