@@ -10,3 +10,4 @@ conda
 poetry
 pipenv
 streamlit-drawable-canvas
+keras

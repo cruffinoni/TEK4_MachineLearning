@@ -4,7 +4,11 @@ import numpy as np
 import os
 import pickle
 import warnings
+
+import keras
+from keras.models import Sequential, load_model
 from streamlit_drawable_canvas import st_canvas
+
 
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
@@ -14,6 +18,10 @@ def load_model(modelfile):
     loaded_model = pickle.load(open(modelfile, 'rb'))
     return loaded_model
 
+def runPrediction(model):
+    # model.predict()
+    return "test"
+
 
 def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
@@ -21,6 +29,7 @@ def file_selector(folder_path='.'):
     return os.path.join(folder_path, selected_filename)
 
 def main():
+    model = load_model("./final_model.h5")
     # title
     st.markdown("""
     <div>
@@ -54,7 +63,7 @@ def main():
             ## Results 🔍 
             ''')
             col1.success(
-                f"{5} are recommended by the A.I for your farm.")
+                f"{runPrediction(model)} are recommended by the A.I for your farm.")
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
             stroke_width=1,
