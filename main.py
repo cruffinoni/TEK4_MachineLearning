@@ -61,7 +61,7 @@ def main():
         with st.beta_expander("🤖  Artificial intelligence", expanded=True):
             st.markdown("""
             #### How does it work ❓ 
-            \t\tYou can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
+            You can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
             """)
 
         canvas_result = st_canvas(
@@ -70,18 +70,17 @@ def main():
             stroke_color="#FFFFFF",
             background_color="#000000",
             update_streamlit=True,
-            height=56,
-            width=56,
+            height=224,
+            width=224,
             drawing_mode="freedraw",
             key="canvas",
         )
-        if st.button('Predict') and canvas_result.image_data is not None:
-            st.write('''
-            ## Results 🔍 
-            ''')
-            st.success(
-                f" Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
-    # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
+    if st.button('Predict') and canvas_result.image_data is not None:
+        st.write('''
+        ## Results 🔍 
+        ''')
+        st.success(
+            f" Our AI detect that your draw a {runPrediction(model, canvas_result.image_data / np.array([4, 4, 4, 4]))} in the black box")
 
     st.warning(
         "Note: This A.I application is for educational/demo purposes only and cannot be relied upon.")
