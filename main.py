@@ -33,7 +33,10 @@ def runPrediction(model, image):
     # prepare pixel data
     img = img.astype('float32')
     img = img / 255.0
-    return img.shape
+    predict_x = model.predict(img)
+    classes_x = np.argmax(predict_x, axis=1)
+    print(classes_x)
+    return classes_x
 
 
 def file_selector(folder_path='.'):
