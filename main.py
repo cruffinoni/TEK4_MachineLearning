@@ -64,7 +64,7 @@ def main():
             """)
         '''
         ## How does it work ❓ 
-        You can upload an 80x80 image with a black background and white writing. Then press the prediction button and the result will be displayed at the bottom.
+        You can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
         '''
 
     with col2:
@@ -91,7 +91,7 @@ def main():
             ## Results 🔍 
             ''')
             col1.success(
-                f"{runPrediction(model, canvas_result.image_data)} are recommended by the A.I for your farm.")
+                f" Our IA detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
     # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
 
     st.warning(
