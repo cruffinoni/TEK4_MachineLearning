@@ -79,16 +79,15 @@ def main():
             drawing_mode="freedraw",
             key="canvas",
         )
-        if st.button('Predict') and canvas_result.image_data is not None:
-            st.write('''
-            ## Results 🔍 
-            ''')
         st.markdown("""
         <br/>
         """, unsafe_allow_html=True)
 
-    st.success(
-        f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
+    if st.button('Predict') and canvas_result.image_data is not None:
+        st.write('''
+        ## Results: 
+        ''')
+        st.success(f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box.")
     st.warning(
         "Note: This A.I application is for educational/demo purposes only and cannot be relied upon.")
 
