@@ -39,12 +39,6 @@ def runPrediction(model, image):
     return classes_x[0]
 
 
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
-
 def main():
     model = load_model("./final_model.h5")
     # title
@@ -69,12 +63,6 @@ def main():
         '''
 
     with col2:
-        uploaded_file = st.file_uploader("Upload Files", type=['png', 'jpeg'])
-        if uploaded_file is not None:
-            file_details = {"FileName": uploaded_file.name,
-                            "FileType": uploaded_file.type,
-                            "FileSize": uploaded_file.size}
-            st.write(file_details)
 
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
