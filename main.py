@@ -80,7 +80,7 @@ def main():
             ## Results 🔍 
             ''')
             col1.success(
-                f" Our IA detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
+                f" Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box")
     # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
 
     st.warning(
