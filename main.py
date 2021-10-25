@@ -59,7 +59,10 @@ def main():
     with col1:
         with st.beta_expander(" ℹ️ Information", expanded=True):
             st.write("""
-           Definition of the project
+           The objective of this project was to discover machine learning and for this we decided to create a model using a convolutional layer and a max pooling layer in order to interpret the number that the user has drawn in the black box provided for this purpose.
+In the future we could apply this model in many situations such as reading the house number for google map, or reading the number on a soccer player's shirt to follow him on a soccer field, etc...
+
+Translated with www.DeepL.com/Translator (free version)
 
             """)
         '''
