@@ -10,5 +10,4 @@ conda
 poetry
 pipenv
 streamlit-drawable-canvas
-keras==2.2.1
-tensorflow
+
