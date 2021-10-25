@@ -20,7 +20,7 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 
 def runPrediction(model, image):
-    im = Image.fromarray(image)
+    im = Image.fromarray((image * 255).astype(np.uint8))
     im.save("currentImage", "PNG")
 
     # load the image
