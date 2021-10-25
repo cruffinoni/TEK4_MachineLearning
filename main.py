@@ -20,13 +20,8 @@ def runPrediction(model, image):
     img = image
     grey = rgb2gray(img)
     grey = zoom(grey, 0.125)
-    x_np = torch.from_numpy(grey).unsqueeze(0)  #
-    x = x_np.unsqueeze(0)
-    x = x.float()
-    output = model(x)
-    pred = torch.max(output, 1)
-    pred = pred[1].numpy()
-    return image
+    output = model(grey)
+    return grey
 
 
 def rgb2gray(rgb):
