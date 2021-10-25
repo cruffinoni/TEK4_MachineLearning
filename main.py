@@ -4,7 +4,6 @@ import numpy as np
 import os
 import pickle
 import warnings
-from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
@@ -59,7 +58,7 @@ def main():
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
             stroke_width=1,
-            stroke_color="#000000",
+            stroke_color="#FFFFFF",
             background_color="#000000",
             update_streamlit=True,
             height=150,
