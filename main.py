@@ -15,7 +15,7 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 
 def load_model(modelfile):
-    loaded_model = pickle.load(open(modelfile, 'rb'))
+    loaded_model = load_model(modelfile)
     return loaded_model
 
 def runPrediction(model):
