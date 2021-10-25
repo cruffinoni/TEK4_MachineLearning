@@ -79,9 +79,6 @@ def main():
             drawing_mode="freedraw",
             key="canvas",
         )
-        st.markdown("""
-        <br/>
-        """, unsafe_allow_html=True)
         st.button('Predict')
 
     if canvas_result.image_data is not None:
