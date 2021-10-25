@@ -7,11 +7,7 @@ import warnings
 
 import keras
 from keras import models
-from keras.preprocessing.image import img_to_array, load_img
-from keras.datasets import mnist
 from keras.models import Sequential, load_model
-from keras.layers import Dense, Activation, Flatten, Dropout
-from statistics import mean
 
 from matplotlib import pyplot
 from sklearn.model_selection import KFold
