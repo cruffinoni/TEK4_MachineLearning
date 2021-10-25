@@ -21,10 +21,6 @@ def runPrediction(model, image):
     return img
 
 
-def rgb2gray(rgb):
-    return np.dot(rgb[..., :3], [0.299, 0.587, 0.144])
-
-
 def file_selector(folder_path='.'):
     filenames = os.listdir(folder_path)
     selected_filename = st.selectbox('Select a file', filenames)
@@ -76,6 +72,7 @@ def main():
             col1.write('''
             ## Results 🔍 
             ''')
+            st.image(canvas_result.image_data)
             col1.success(
                 f"{runPrediction(model, canvas_result.image_data)} are recommended by the A.I for your farm.")
     # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
