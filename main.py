@@ -13,11 +13,6 @@ from streamlit_drawable_canvas import st_canvas
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
 
-
-def load_model(modelfile):
-    loaded_model = load_model(modelfile)
-    return loaded_model
-
 def runPrediction(model):
     # model.predict()
     return "test"
