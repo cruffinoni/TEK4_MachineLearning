@@ -26,6 +26,7 @@ def rgb2gray(rgb):
 def runPrediction(model, image):
     im = Image.fromarray((image * 255).astype(np.uint8))
     img = img_to_array(im)
+    img.resize((28, 28))
     gray = rgb2gray(img)
 
     # reshape into a single sample with 1 channel
