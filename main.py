@@ -20,7 +20,8 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 
 def runPrediction(model, image):
-    img = Image.fromarray(image)
+    array = np.array(image, dtype=np.float32)
+    img = Image.fromarray(array)
     img = img_to_array(img)
     # reshape into a single sample with 1 channel
     img = img.reshape(1, 28, 28, 1)
