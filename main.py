@@ -5,6 +5,7 @@ import os
 import pickle
 import warnings
 
+import tensorflow
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.layers import Conv2D, MaxPooling2D
 from tensorflow.keras.optimizers import SGD
