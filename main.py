@@ -55,15 +55,14 @@ def main():
             st.write("""
            The objective of this project was to discover machine learning and for this we decided to create a model using a convolutional layer and a max pooling layer in order to interpret the number that the user has drawn in the black box provided for this purpose.
 \nIn the future we could apply this model in many situations such as reading the house number for google map, or reading the number on a soccer player's shirt to follow him on a soccer field, etc...
-
             """)
-        '''
-        ## How does it work ❓ 
-        You can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
-        '''
 
     with col2:
-
+        with st.beta_expander("🤖  Artificial intelligence", expanded=True):
+            st.write("""
+            ## How does it work ❓ 
+            You can draw a number between 0 and 9 and our model is going to try to recognize the number that you draw.
+            """)
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
             stroke_width=1,
