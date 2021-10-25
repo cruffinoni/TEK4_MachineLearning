@@ -6,7 +6,7 @@ import pickle
 import warnings
 
 from tensorflow import keras
-from keras.models import Sequential, load_model
+from tensorflow.keras.models import Sequential, load_model
 from streamlit_drawable_canvas import st_canvas
 
 
