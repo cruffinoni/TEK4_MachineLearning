@@ -30,7 +30,7 @@ def runPrediction(model, image):
     # # prepare pixel data
     # img = img.astype('float32')
     # img = img / 255.0
-    return img.shape
+    return img
 
 
 def file_selector(folder_path='.'):
