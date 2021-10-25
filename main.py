@@ -4,19 +4,34 @@ import numpy as np
 import os
 import pickle
 import warnings
+import torch
+from scipy.ndimage.interpolation import zoom
+
 
 import keras
 from keras import models
 from keras.models import Sequential, load_model
 from streamlit_drawable_canvas import st_canvas
 
-
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
                         layout='centered', initial_sidebar_state="collapsed")
 
 
 def runPrediction(model, image):
+    img = image.image_data
+    grey = rgb2gray(img)
+    grey = zoom(grey, 0.125)
+    x_np = torch.from_numpy(grey).unsqueeze(0)  #
+    x = x_np.unsqueeze(0)
+    x = x.float()
+    output = model(x)
+    pred = torch.max(output, 1)
+    pred = pred[1].numpy()
     return image
+
+
+def rgb2gray(rgb):
+    return np.dot(rgb[..., :3], [0.299, 0.587, 0.144])
 
 
 def file_selector(folder_path='.'):
@@ -54,7 +69,6 @@ def main():
                             "FileType": uploaded_file.type,
                             "FileSize": uploaded_file.size}
             st.write(file_details)
-
 
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
