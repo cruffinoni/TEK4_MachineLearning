@@ -83,6 +83,8 @@ def main():
 
     if canvas_result.image_data is not None:
         st.success(f"🔎 Our AI detect that your draw a {runPrediction(model, canvas_result.image_data)} in the black box.")
+    else:
+        st.error(f"🔎 Please, draw something.")
     st.warning(
         "Note: This A.I application is for educational/demo purposes only and cannot be relied upon.")
 
