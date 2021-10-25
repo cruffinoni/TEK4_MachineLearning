@@ -6,10 +6,13 @@ import pickle
 import warnings
 from scipy.ndimage.interpolation import zoom
 
+from PIL import Image
 
 import keras
 from keras import models
 from keras.models import Sequential, load_model
+from keras.preprocessing.image import img_to_array, load_img, array_to_img
+
 from streamlit_drawable_canvas import st_canvas
 
 st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="✍",
@@ -17,7 +20,14 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
 
 
 def runPrediction(model, image):
-    img = image
+    array = np.array(image, dtype=np.uint8)
+    img = Image.fromarray(array)
+    img = img_to_array(img)
+    # reshape into a single sample with 1 channel
+    img = img.reshape(1, 28, 28, 1)
+    # prepare pixel data
+    img = img.astype('float32')
+    img = img / 255.0
     return img
 
 
@@ -72,7 +82,6 @@ def main():
             col1.write('''
             ## Results 🔍 
             ''')
-            st.image(canvas_result.image_data)
             col1.success(
                 f"{runPrediction(model, canvas_result.image_data)} are recommended by the A.I for your farm.")
     # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
