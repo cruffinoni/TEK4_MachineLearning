@@ -9,4 +9,4 @@ scikit_learn==0.24.1
 poetry
 pipenv
 streamlit-drawable-canvas
-
+tensorflow
