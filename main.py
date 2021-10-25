@@ -15,7 +15,8 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
                         layout='centered', initial_sidebar_state="collapsed")
 
 
-def runPrediction(model):
+def runPrediction(model, image):
+    print(image)
     # model.predict()
     return "test"
 
@@ -56,12 +57,7 @@ def main():
                             "FileSize": uploaded_file.size}
             st.write(file_details)
 
-        if st.button('Predict'):
-            col1.write('''
-            ## Results 🔍 
-            ''')
-            col1.success(
-                f"{runPrediction(model)} are recommended by the A.I for your farm.")
+
         canvas_result = st_canvas(
             fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
             stroke_width=1,
@@ -73,6 +69,12 @@ def main():
             drawing_mode="freedraw",
             key="canvas",
         )
+        if st.button('Predict') and canvas_result.image_data is not None:
+            col1.write('''
+            ## Results 🔍 
+            ''')
+            col1.success(
+                f"{runPrediction(model, canvas_result.image_data)} are recommended by the A.I for your farm.")
     # code for html ☘️ 🌾 🌳 👨‍🌾  🍃
 
     st.warning(
