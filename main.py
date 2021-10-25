@@ -19,9 +19,14 @@ st.beta_set_page_config(page_title="Handwritten number recognition", page_icon="
                         layout='centered', initial_sidebar_state="collapsed")
 
 
+def rgb2gray(rgb):
+    return np.dot(rgb[..., :3], [0.2989, 0.5870, 0.1140])
+
+
 def runPrediction(model, image):
     im = Image.fromarray((image * 255).astype(np.uint8))
     img = img_to_array(im)
+    gray = rgb2gray(img)
     # im.save("currentImage", "png")
 
     # img = img_to_array(img)
@@ -30,7 +35,7 @@ def runPrediction(model, image):
     # # prepare pixel data
     # img = img.astype('float32')
     # img = img / 255.0
-    return img
+    return gray
 
 
 def file_selector(folder_path='.'):
